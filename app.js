@@ -32,4 +32,39 @@ if (command === "list") {
     );
   });
 
+}if (command === "complete") {
+
+  const id = Number(process.argv[3]);
+
+  tasks.forEach(task => {
+
+    if (task.id === id) {
+      task.completed = true;
+    }
+
+  });
+
+  fs.writeFileSync(
+    "tasks.json",
+    JSON.stringify(tasks, null, 2)
+  );
+
+  console.log("Task Completed");
+
+}
+if (command === "delete") {
+
+  const id = Number(process.argv[3]);
+
+  tasks = tasks.filter(
+    task => task.id !== id
+  );
+
+  fs.writeFileSync(
+    "tasks.json",
+    JSON.stringify(tasks, null, 2)
+  );
+
+  console.log("Task Deleted");
+
 }
