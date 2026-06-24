@@ -23,10 +23,5 @@
     "id": 6,
     "task": "do ur laudery",
     "completed": false
-  },
-  {
-    "id": 7,
-    "task": "go to work",
-    "completed": false
   }
 ]
